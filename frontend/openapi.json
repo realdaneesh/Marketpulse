@@ -1,0 +1,3861 @@
+{
+  "components": {
+    "schemas": {
+      "AnomalyEvent": {
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/RiskAssessment"
+          },
+          "symbol": {
+            "title": "Symbol",
+            "type": "string"
+          },
+          "window_end": {
+            "format": "date-time",
+            "title": "Window End",
+            "type": "string"
+          },
+          "window_start": {
+            "format": "date-time",
+            "title": "Window Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "profile_id",
+          "symbol",
+          "window_start",
+          "window_end",
+          "risk"
+        ],
+        "title": "AnomalyEvent",
+        "type": "object"
+      },
+      "AnomalySummary": {
+        "description": "Summary of a bounded sample of recent combined alerts, not an all-time total.",
+        "properties": {
+          "by_symbol": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "By Symbol",
+            "type": "object"
+          },
+          "latest_window_end": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Window End"
+          },
+          "max_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Score"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "returned_events": {
+            "title": "Returned Events",
+            "type": "integer"
+          },
+          "sample_limit": {
+            "title": "Sample Limit",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "profile_id",
+          "sample_limit",
+          "returned_events",
+          "by_symbol",
+          "max_score",
+          "latest_window_end"
+        ],
+        "title": "AnomalySummary",
+        "type": "object"
+      },
+      "AssetStatistic": {
+        "properties": {
+          "baseline_count": {
+            "default": 0,
+            "title": "Baseline Count",
+            "type": "integer"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "current_return": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Current Return"
+          },
+          "elevated_volatility": {
+            "default": false,
+            "title": "Elevated Volatility",
+            "type": "boolean"
+          },
+          "eligible_candles": {
+            "title": "Eligible Candles",
+            "type": "integer"
+          },
+          "eligible_returns": {
+            "title": "Eligible Returns",
+            "type": "integer"
+          },
+          "expected_count": {
+            "title": "Expected Count",
+            "type": "integer"
+          },
+          "return_volatility": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Return Volatility"
+          },
+          "symbol": {
+            "title": "Symbol",
+            "type": "string"
+          },
+          "volatility_baseline": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Volatility Baseline"
+          }
+        },
+        "required": [
+          "symbol",
+          "eligible_returns",
+          "eligible_candles",
+          "expected_count",
+          "coverage"
+        ],
+        "title": "AssetStatistic",
+        "type": "object"
+      },
+      "Breakdown": {
+        "properties": {
+          "asset_a": {
+            "title": "Asset A",
+            "type": "string"
+          },
+          "asset_b": {
+            "title": "Asset B",
+            "type": "string"
+          },
+          "baseline_count": {
+            "title": "Baseline Count",
+            "type": "integer"
+          },
+          "baseline_mad": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Mad"
+          },
+          "baseline_median": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Median"
+          },
+          "change_from_baseline": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Change From Baseline"
+          },
+          "deviation_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Deviation Score"
+          },
+          "direction": {
+            "enum": [
+              "strengthening",
+              "weakening",
+              "unchanged",
+              "unavailable"
+            ],
+            "title": "Direction",
+            "type": "string"
+          },
+          "effective_scale": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective Scale"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "is_event": {
+            "default": false,
+            "title": "Is Event",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history",
+              "unavailable"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "asset_a",
+          "asset_b",
+          "status",
+          "baseline_count",
+          "direction",
+          "explanation"
+        ],
+        "title": "Breakdown",
+        "type": "object"
+      },
+      "BreakdownEvent": {
+        "properties": {
+          "breakdown": {
+            "$ref": "#/components/schemas/Breakdown"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "relationship": {
+            "$ref": "#/components/schemas/PairStatistic"
+          },
+          "window_end": {
+            "format": "date-time",
+            "title": "Window End",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "profile_id",
+          "window_end",
+          "relationship",
+          "breakdown"
+        ],
+        "title": "BreakdownEvent",
+        "type": "object"
+      },
+      "Candle": {
+        "description": "A finalized event-time window, or a compact range of unknown missing intervals.\n\n'observed' means eligible under the watermark/continuity policy, not certified\ncomplete exchange coverage. Missing volumes are null rather than fabricated zeroes.",
+        "properties": {
+          "aggressive_buy_volume": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Aggressive Buy Volume"
+          },
+          "aggressive_sell_volume": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Aggressive Sell Volume"
+          },
+          "base_volume": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Base Volume"
+          },
+          "close": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Close"
+          },
+          "completeness_note": {
+            "title": "Completeness Note",
+            "type": "string"
+          },
+          "first_trade_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Trade Id"
+          },
+          "high": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "High"
+          },
+          "last_trade_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Trade Id"
+          },
+          "log_return": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Log Return"
+          },
+          "low": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Low"
+          },
+          "missing_intervals": {
+            "default": 0,
+            "title": "Missing Intervals",
+            "type": "integer"
+          },
+          "open": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Open"
+          },
+          "quality": {
+            "enum": [
+              "observed",
+              "partial_start",
+              "data_gap",
+              "missing"
+            ],
+            "title": "Quality",
+            "type": "string"
+          },
+          "quote_volume": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Quote Volume"
+          },
+          "realized_volatility": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Realized Volatility"
+          },
+          "signed_imbalance": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Signed Imbalance"
+          },
+          "symbol": {
+            "title": "Symbol",
+            "type": "string"
+          },
+          "trade_count": {
+            "default": 0,
+            "title": "Trade Count",
+            "type": "integer"
+          },
+          "vwap": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vwap"
+          },
+          "window_end": {
+            "format": "date-time",
+            "title": "Window End",
+            "type": "string"
+          },
+          "window_seconds": {
+            "title": "Window Seconds",
+            "type": "integer"
+          },
+          "window_start": {
+            "format": "date-time",
+            "title": "Window Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol",
+          "window_start",
+          "window_end",
+          "window_seconds",
+          "quality",
+          "completeness_note"
+        ],
+        "title": "Candle",
+        "type": "object"
+      },
+      "ChangePoint": {
+        "additionalProperties": false,
+        "properties": {
+          "baseline": {
+            "title": "Baseline",
+            "type": "number"
+          },
+          "cumulative_score": {
+            "title": "Cumulative Score",
+            "type": "number"
+          },
+          "direction": {
+            "enum": [
+              "increase",
+              "decrease"
+            ],
+            "title": "Direction",
+            "type": "string"
+          },
+          "effect": {
+            "title": "Effect",
+            "type": "number"
+          },
+          "end": {
+            "format": "date-time",
+            "title": "End",
+            "type": "string"
+          },
+          "entity": {
+            "title": "Entity",
+            "type": "string"
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "experiment_id": {
+            "title": "Experiment Id",
+            "type": "string"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "feature": {
+            "title": "Feature",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "observations": {
+            "title": "Observations",
+            "type": "integer"
+          },
+          "production_alert_nearby": {
+            "title": "Production Alert Nearby",
+            "type": "boolean"
+          },
+          "scale": {
+            "title": "Scale",
+            "type": "number"
+          },
+          "segment": {
+            "title": "Segment",
+            "type": "string"
+          },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "threshold": {
+            "title": "Threshold",
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "experiment_id",
+          "entity",
+          "feature",
+          "segment",
+          "start",
+          "end",
+          "baseline",
+          "scale",
+          "effect",
+          "cumulative_score",
+          "threshold",
+          "observations",
+          "direction",
+          "production_alert_nearby",
+          "evidence",
+          "explanation"
+        ],
+        "title": "ChangePoint",
+        "type": "object"
+      },
+      "Contribution": {
+        "properties": {
+          "detector": {
+            "enum": [
+              "volume",
+              "volatility",
+              "imbalance",
+              "price_shock"
+            ],
+            "title": "Detector",
+            "type": "string"
+          },
+          "points": {
+            "anyOf": [
+              {
+                "maximum": 100.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Points"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history",
+              "incomplete_window",
+              "insufficient_activity",
+              "unavailable_metric"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "weight": {
+            "title": "Weight",
+            "type": "number"
+          }
+        },
+        "required": [
+          "detector",
+          "status",
+          "weight"
+        ],
+        "title": "Contribution",
+        "type": "object"
+      },
+      "CorrelationFrame": {
+        "properties": {
+          "assets": {
+            "items": {
+              "$ref": "#/components/schemas/AssetStatistic"
+            },
+            "title": "Assets",
+            "type": "array"
+          },
+          "pairs": {
+            "items": {
+              "$ref": "#/components/schemas/PairStatistic"
+            },
+            "title": "Pairs",
+            "type": "array"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "skipped_intervals": {
+            "title": "Skipped Intervals",
+            "type": "integer"
+          },
+          "window_end": {
+            "format": "date-time",
+            "title": "Window End",
+            "type": "string"
+          }
+        },
+        "required": [
+          "profile_id",
+          "window_end",
+          "skipped_intervals",
+          "pairs",
+          "assets"
+        ],
+        "title": "CorrelationFrame",
+        "type": "object"
+      },
+      "CrossProcessingStatus": {
+        "properties": {
+          "database_inside_onedrive": {
+            "title": "Database Inside Onedrive",
+            "type": "boolean"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "last_completed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Completed At"
+          },
+          "processed_through": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Processed Through"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "remaining_intervals": {
+            "title": "Remaining Intervals",
+            "type": "integer"
+          },
+          "safe_through": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Safe Through"
+          },
+          "snapshots": {
+            "title": "Snapshots",
+            "type": "integer"
+          },
+          "source_profile_id": {
+            "title": "Source Profile Id",
+            "type": "string"
+          },
+          "source_unstaged_trades": {
+            "title": "Source Unstaged Trades",
+            "type": "integer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceProgress"
+            },
+            "title": "Sources",
+            "type": "array"
+          },
+          "state": {
+            "enum": [
+              "not_started",
+              "waiting_for_sources",
+              "catching_up",
+              "caught_up"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "worker_connectivity": {
+            "const": "unknown",
+            "default": "unknown",
+            "title": "Worker Connectivity",
+            "type": "string"
+          }
+        },
+        "required": [
+          "profile_id",
+          "source_profile_id",
+          "state",
+          "processed_through",
+          "safe_through",
+          "remaining_intervals",
+          "snapshots",
+          "last_completed_at",
+          "source_unstaged_trades",
+          "sources",
+          "database_inside_onedrive",
+          "explanation"
+        ],
+        "title": "CrossProcessingStatus",
+        "type": "object"
+      },
+      "CrossSnapshot": {
+        "properties": {
+          "assets": {
+            "items": {
+              "$ref": "#/components/schemas/AssetStatistic"
+            },
+            "title": "Assets",
+            "type": "array"
+          },
+          "breakdowns": {
+            "items": {
+              "$ref": "#/components/schemas/Breakdown"
+            },
+            "title": "Breakdowns",
+            "type": "array"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "lead_lag": {
+            "items": {
+              "$ref": "#/components/schemas/LeadLag"
+            },
+            "title": "Lead Lag",
+            "type": "array"
+          },
+          "lookback": {
+            "title": "Lookback",
+            "type": "integer"
+          },
+          "pairs": {
+            "items": {
+              "$ref": "#/components/schemas/PairStatistic"
+            },
+            "title": "Pairs",
+            "type": "array"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "regime": {
+            "$ref": "#/components/schemas/Regime"
+          },
+          "skipped_intervals": {
+            "default": 0,
+            "title": "Skipped Intervals",
+            "type": "integer"
+          },
+          "source_profile_id": {
+            "title": "Source Profile Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "window_end": {
+            "format": "date-time",
+            "title": "Window End",
+            "type": "string"
+          },
+          "window_seconds": {
+            "title": "Window Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "profile_id",
+          "source_profile_id",
+          "window_end",
+          "window_seconds",
+          "lookback",
+          "status",
+          "assets",
+          "pairs",
+          "breakdowns",
+          "lead_lag",
+          "regime",
+          "explanation"
+        ],
+        "title": "CrossSnapshot",
+        "type": "object"
+      },
+      "DetectorResult": {
+        "properties": {
+          "anomaly_score": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Anomaly Score"
+          },
+          "baseline_mad": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Mad"
+          },
+          "baseline_metric": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Metric"
+          },
+          "detector": {
+            "enum": [
+              "volume",
+              "volatility",
+              "imbalance",
+              "price_shock"
+            ],
+            "title": "Detector",
+            "type": "string"
+          },
+          "effective_scale": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective Scale"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "history_count": {
+            "default": 0,
+            "title": "History Count",
+            "type": "integer"
+          },
+          "is_anomaly": {
+            "default": false,
+            "title": "Is Anomaly",
+            "type": "boolean"
+          },
+          "observed_metric": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Observed Metric"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history",
+              "incomplete_window",
+              "insufficient_activity",
+              "unavailable_metric"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "symbol": {
+            "title": "Symbol",
+            "type": "string"
+          },
+          "threshold": {
+            "title": "Threshold",
+            "type": "number"
+          },
+          "window_end": {
+            "format": "date-time",
+            "title": "Window End",
+            "type": "string"
+          },
+          "window_start": {
+            "format": "date-time",
+            "title": "Window Start",
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol",
+          "window_start",
+          "window_end",
+          "detector",
+          "status",
+          "observed_metric",
+          "threshold",
+          "explanation"
+        ],
+        "title": "DetectorResult",
+        "type": "object"
+      },
+      "Discovery": {
+        "additionalProperties": false,
+        "properties": {
+          "assets": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Assets",
+            "type": "array"
+          },
+          "baseline": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline"
+          },
+          "config_version": {
+            "title": "Config Version",
+            "type": "string"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "effect": {
+            "title": "Effect",
+            "type": "number"
+          },
+          "end": {
+            "format": "date-time",
+            "title": "End",
+            "type": "string"
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Evidence",
+            "type": "array"
+          },
+          "experiment_id": {
+            "title": "Experiment Id",
+            "type": "string"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "limitations": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Limitations",
+            "type": "array"
+          },
+          "method": {
+            "title": "Method",
+            "type": "string"
+          },
+          "observations": {
+            "title": "Observations",
+            "type": "integer"
+          },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "statistical_readiness": {
+            "enum": [
+              "descriptive_only",
+              "assumption_dependent_holdout"
+            ],
+            "title": "Statistical Readiness",
+            "type": "string"
+          },
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "validation": {
+            "enum": [
+              "exploratory",
+              "held_out_association"
+            ],
+            "title": "Validation",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "experiment_id",
+          "type",
+          "assets",
+          "start",
+          "end",
+          "observations",
+          "baseline",
+          "effect",
+          "statistical_readiness",
+          "coverage",
+          "method",
+          "config_version",
+          "validation",
+          "evidence",
+          "limitations",
+          "explanation"
+        ],
+        "title": "Discovery",
+        "type": "object"
+      },
+      "Evaluation": {
+        "properties": {
+          "candle": {
+            "$ref": "#/components/schemas/Candle"
+          },
+          "detectors": {
+            "items": {
+              "$ref": "#/components/schemas/DetectorResult"
+            },
+            "title": "Detectors",
+            "type": "array"
+          },
+          "risk": {
+            "$ref": "#/components/schemas/RiskAssessment"
+          }
+        },
+        "required": [
+          "candle",
+          "detectors",
+          "risk"
+        ],
+        "title": "Evaluation",
+        "type": "object"
+      },
+      "Evidence": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "candle",
+              "cross",
+              "change_point"
+            ],
+            "title": "Kind",
+            "type": "string"
+          },
+          "observation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Candle"
+              },
+              {
+                "$ref": "#/components/schemas/CrossSnapshot"
+              },
+              {
+                "$ref": "#/components/schemas/ChangePoint"
+              }
+            ],
+            "title": "Observation"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "observation"
+        ],
+        "title": "Evidence",
+        "type": "object"
+      },
+      "Experiment": {
+        "additionalProperties": false,
+        "properties": {
+          "algorithm_version": {
+            "title": "Algorithm Version",
+            "type": "string"
+          },
+          "completed_at": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Completed At"
+          },
+          "config": {
+            "$ref": "#/components/schemas/ResearchConfig"
+          },
+          "created_at": {
+            "format": "date-time",
+            "title": "Created At",
+            "type": "string"
+          },
+          "cross_profile_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cross Profile Id"
+          },
+          "cursor": {
+            "title": "Cursor",
+            "type": "integer"
+          },
+          "discrepancies": {
+            "default": 0,
+            "title": "Discrepancies",
+            "type": "integer"
+          },
+          "embargo_intervals": {
+            "title": "Embargo Intervals",
+            "type": "integer"
+          },
+          "end": {
+            "format": "date-time",
+            "title": "End",
+            "type": "string"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "explanation": {
+            "default": "Observational replay, not independent detector validation.",
+            "title": "Explanation",
+            "type": "string"
+          },
+          "fingerprint": {
+            "title": "Fingerprint",
+            "type": "string"
+          },
+          "id": {
+            "title": "Id",
+            "type": "string"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "sensitivity": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Sensitivity",
+            "type": "object"
+          },
+          "source_profile_id": {
+            "title": "Source Profile Id",
+            "type": "string"
+          },
+          "start": {
+            "format": "date-time",
+            "title": "Start",
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "pending",
+              "running",
+              "complete",
+              "failed"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "total": {
+            "title": "Total",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "id",
+          "profile_id",
+          "source_profile_id",
+          "cross_profile_id",
+          "algorithm_version",
+          "fingerprint",
+          "start",
+          "end",
+          "created_at",
+          "state",
+          "cursor",
+          "total",
+          "config",
+          "embargo_intervals"
+        ],
+        "title": "Experiment",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "HealthResponse": {
+        "properties": {
+          "database": {
+            "title": "Database",
+            "type": "string"
+          },
+          "ingestion": {
+            "default": "separate_process_not_monitored",
+            "title": "Ingestion",
+            "type": "string"
+          },
+          "status": {
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "database"
+        ],
+        "title": "HealthResponse",
+        "type": "object"
+      },
+      "LagStatistic": {
+        "properties": {
+          "asset_a": {
+            "title": "Asset A",
+            "type": "string"
+          },
+          "asset_b": {
+            "title": "Asset B",
+            "type": "string"
+          },
+          "change": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Change"
+          },
+          "coefficient": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coefficient"
+          },
+          "coverage": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Coverage",
+            "type": "number"
+          },
+          "expected_count": {
+            "title": "Expected Count",
+            "type": "integer"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "lag": {
+            "title": "Lag",
+            "type": "integer"
+          },
+          "sample_count": {
+            "title": "Sample Count",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history",
+              "insufficient_coverage",
+              "zero_variance",
+              "current_ineligible"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "asset_a",
+          "asset_b",
+          "status",
+          "sample_count",
+          "expected_count",
+          "coverage",
+          "explanation",
+          "lag"
+        ],
+        "title": "LagStatistic",
+        "type": "object"
+      },
+      "LatestAnalytics": {
+        "properties": {
+          "evaluation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Evaluation"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "finalized_through": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finalized Through"
+          },
+          "late_trades": {
+            "default": 0,
+            "title": "Late Trades",
+            "type": "integer"
+          },
+          "max_event_time": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Event Time"
+          },
+          "pending_trades": {
+            "default": 0,
+            "title": "Pending Trades",
+            "type": "integer"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history",
+              "unavailable"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "symbol": {
+            "title": "Symbol",
+            "type": "string"
+          }
+        },
+        "required": [
+          "profile_id",
+          "symbol",
+          "status",
+          "explanation"
+        ],
+        "title": "LatestAnalytics",
+        "type": "object"
+      },
+      "LeadLag": {
+        "properties": {
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "exploratory_selected_lag": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exploratory Selected Lag"
+          },
+          "follower": {
+            "title": "Follower",
+            "type": "string"
+          },
+          "lags": {
+            "items": {
+              "$ref": "#/components/schemas/LagStatistic"
+            },
+            "title": "Lags",
+            "type": "array"
+          },
+          "leader": {
+            "title": "Leader",
+            "type": "string"
+          },
+          "out_of_sample": {
+            "$ref": "#/components/schemas/OutOfSample"
+          }
+        },
+        "required": [
+          "leader",
+          "follower",
+          "lags",
+          "out_of_sample",
+          "explanation"
+        ],
+        "title": "LeadLag",
+        "type": "object"
+      },
+      "LeadLagResponse": {
+        "properties": {
+          "analyses": {
+            "items": {
+              "$ref": "#/components/schemas/LeadLag"
+            },
+            "title": "Analyses",
+            "type": "array"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "window_end": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Window End"
+          },
+          "window_seconds": {
+            "title": "Window Seconds",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "profile_id",
+          "window_end",
+          "window_seconds",
+          "status",
+          "analyses",
+          "explanation"
+        ],
+        "title": "LeadLagResponse",
+        "type": "object"
+      },
+      "Metric": {
+        "additionalProperties": false,
+        "properties": {
+          "alerts": {
+            "title": "Alerts",
+            "type": "integer"
+          },
+          "coverage_excluded": {
+            "title": "Coverage Excluded",
+            "type": "integer"
+          },
+          "detector": {
+            "title": "Detector",
+            "type": "string"
+          },
+          "eligible": {
+            "title": "Eligible",
+            "type": "integer"
+          },
+          "eligible_coverage": {
+            "title": "Eligible Coverage",
+            "type": "number"
+          },
+          "entity": {
+            "title": "Entity",
+            "type": "string"
+          },
+          "episode_durations_seconds": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Episode Durations Seconds",
+            "type": "array"
+          },
+          "episodes": {
+            "title": "Episodes",
+            "type": "integer"
+          },
+          "evaluated": {
+            "title": "Evaluated",
+            "type": "integer"
+          },
+          "expected_intervals": {
+            "title": "Expected Intervals",
+            "type": "integer"
+          },
+          "explanation": {
+            "default": "Unlabeled alert frequency is not a false-positive rate.",
+            "title": "Explanation",
+            "type": "string"
+          },
+          "frequency": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Frequency"
+          },
+          "overlap": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "title": "Overlap",
+            "type": "object"
+          },
+          "score_histogram": {
+            "items": {
+              "type": "integer"
+            },
+            "title": "Score Histogram",
+            "type": "array"
+          },
+          "segment": {
+            "title": "Segment",
+            "type": "string"
+          },
+          "warmup_excluded": {
+            "title": "Warmup Excluded",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "detector",
+          "entity",
+          "segment",
+          "evaluated",
+          "eligible",
+          "alerts",
+          "frequency",
+          "warmup_excluded",
+          "coverage_excluded",
+          "expected_intervals",
+          "eligible_coverage",
+          "episodes",
+          "episode_durations_seconds",
+          "score_histogram",
+          "overlap"
+        ],
+        "title": "Metric",
+        "type": "object"
+      },
+      "OutOfSample": {
+        "properties": {
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "selected_lag": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selected Lag"
+          },
+          "split_time": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Split Time"
+          },
+          "status": {
+            "enum": [
+              "disabled",
+              "insufficient_history",
+              "ready"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "test_coefficient": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Test Coefficient"
+          },
+          "test_count": {
+            "default": 0,
+            "title": "Test Count",
+            "type": "integer"
+          },
+          "test_coverage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Test Coverage"
+          },
+          "train_coefficient": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Train Coefficient"
+          },
+          "train_count": {
+            "default": 0,
+            "title": "Train Count",
+            "type": "integer"
+          },
+          "train_coverage": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Train Coverage"
+          }
+        },
+        "required": [
+          "status",
+          "explanation"
+        ],
+        "title": "OutOfSample",
+        "type": "object"
+      },
+      "PairStatistic": {
+        "properties": {
+          "asset_a": {
+            "title": "Asset A",
+            "type": "string"
+          },
+          "asset_b": {
+            "title": "Asset B",
+            "type": "string"
+          },
+          "change": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Change"
+          },
+          "coefficient": {
+            "anyOf": [
+              {
+                "maximum": 1.0,
+                "minimum": -1.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Coefficient"
+          },
+          "coverage": {
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Coverage",
+            "type": "number"
+          },
+          "expected_count": {
+            "title": "Expected Count",
+            "type": "integer"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "sample_count": {
+            "title": "Sample Count",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history",
+              "insufficient_coverage",
+              "zero_variance",
+              "current_ineligible"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "asset_a",
+          "asset_b",
+          "status",
+          "sample_count",
+          "expected_count",
+          "coverage",
+          "explanation"
+        ],
+        "title": "PairStatistic",
+        "type": "object"
+      },
+      "Regime": {
+        "properties": {
+          "breakdown_pairs": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Breakdown Pairs",
+            "type": "array"
+          },
+          "data_quality": {
+            "enum": [
+              "eligible",
+              "insufficient",
+              "incomplete"
+            ],
+            "title": "Data Quality",
+            "type": "string"
+          },
+          "elevated_assets": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Elevated Assets",
+            "type": "array"
+          },
+          "evidence_time": {
+            "format": "date-time",
+            "title": "Evidence Time",
+            "type": "string"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "label": {
+            "enum": [
+              "insufficient_data",
+              "normal_observed_conditions",
+              "elevated_volatility",
+              "high_synchronization",
+              "correlation_breakdown",
+              "mixed_or_unstable"
+            ],
+            "title": "Label",
+            "type": "string"
+          },
+          "mean_correlation": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean Correlation"
+          },
+          "ready_pairs": {
+            "title": "Ready Pairs",
+            "type": "integer"
+          },
+          "thresholds": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "title": "Thresholds",
+            "type": "object"
+          }
+        },
+        "required": [
+          "label",
+          "data_quality",
+          "evidence_time",
+          "ready_pairs",
+          "elevated_assets",
+          "breakdown_pairs",
+          "thresholds",
+          "explanation"
+        ],
+        "title": "Regime",
+        "type": "object"
+      },
+      "RegimeFrame": {
+        "properties": {
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "regime": {
+            "$ref": "#/components/schemas/Regime"
+          }
+        },
+        "required": [
+          "profile_id",
+          "regime"
+        ],
+        "title": "RegimeFrame",
+        "type": "object"
+      },
+      "RelationshipMatrix": {
+        "properties": {
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "latest": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/CrossSnapshot"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "profile_id": {
+            "title": "Profile Id",
+            "type": "string"
+          },
+          "source_profile_id": {
+            "title": "Source Profile Id",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "symbols": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Symbols",
+            "type": "array"
+          }
+        },
+        "required": [
+          "profile_id",
+          "source_profile_id",
+          "symbols",
+          "status",
+          "explanation"
+        ],
+        "title": "RelationshipMatrix",
+        "type": "object"
+      },
+      "ResearchConfig": {
+        "additionalProperties": false,
+        "properties": {
+          "algorithm_version": {
+            "const": "research-v1",
+            "default": "research-v1",
+            "title": "Algorithm Version",
+            "type": "string"
+          },
+          "allowance": {
+            "default": 0.5,
+            "exclusiveMinimum": 0.0,
+            "title": "Allowance",
+            "type": "number"
+          },
+          "alpha": {
+            "default": 0.05,
+            "exclusiveMinimum": 0.0,
+            "maximum": 0.1,
+            "title": "Alpha",
+            "type": "number"
+          },
+          "block_length": {
+            "default": 120,
+            "maximum": 1000.0,
+            "minimum": 20.0,
+            "title": "Block Length",
+            "type": "integer"
+          },
+          "clip": {
+            "default": 8,
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "Clip",
+            "type": "number"
+          },
+          "initialization": {
+            "default": 30,
+            "maximum": 300.0,
+            "minimum": 10.0,
+            "title": "Initialization",
+            "type": "integer"
+          },
+          "max_intervals": {
+            "default": 10080,
+            "maximum": 10080.0,
+            "minimum": 100.0,
+            "title": "Max Intervals",
+            "type": "integer"
+          },
+          "max_lag": {
+            "default": 3,
+            "maximum": 10.0,
+            "minimum": 1.0,
+            "title": "Max Lag",
+            "type": "integer"
+          },
+          "minimum_blocks": {
+            "default": 8,
+            "maximum": 50.0,
+            "minimum": 8.0,
+            "title": "Minimum Blocks",
+            "type": "integer"
+          },
+          "minimum_controls": {
+            "default": 30,
+            "minimum": 30.0,
+            "title": "Minimum Controls",
+            "type": "integer"
+          },
+          "minimum_effect": {
+            "default": 1.5,
+            "exclusiveMinimum": 0.0,
+            "title": "Minimum Effect",
+            "type": "number"
+          },
+          "minimum_episodes": {
+            "default": 10,
+            "minimum": 10.0,
+            "title": "Minimum Episodes",
+            "type": "integer"
+          },
+          "persistence": {
+            "default": 3,
+            "maximum": 10.0,
+            "minimum": 2.0,
+            "title": "Persistence",
+            "type": "integer"
+          },
+          "resamples": {
+            "default": 199,
+            "maximum": 999.0,
+            "minimum": 99.0,
+            "title": "Resamples",
+            "type": "integer"
+          },
+          "seed": {
+            "default": 1729,
+            "minimum": 0.0,
+            "title": "Seed",
+            "type": "integer"
+          },
+          "threshold": {
+            "default": 8,
+            "exclusiveMinimum": 0.0,
+            "title": "Threshold",
+            "type": "number"
+          }
+        },
+        "title": "ResearchConfig",
+        "type": "object"
+      },
+      "ResearchStatus": {
+        "additionalProperties": false,
+        "properties": {
+          "experiments": {
+            "title": "Experiments",
+            "type": "integer"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "latest": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Experiment"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "schema_version": {
+            "title": "Schema Version",
+            "type": "integer"
+          },
+          "state": {
+            "enum": [
+              "schema_not_migrated",
+              "not_started",
+              "available"
+            ],
+            "title": "State",
+            "type": "string"
+          },
+          "worker_connectivity": {
+            "const": "unknown",
+            "default": "unknown",
+            "title": "Worker Connectivity",
+            "type": "string"
+          }
+        },
+        "required": [
+          "state",
+          "schema_version",
+          "experiments",
+          "explanation"
+        ],
+        "title": "ResearchStatus",
+        "type": "object"
+      },
+      "RiskAssessment": {
+        "description": "Heuristic evidence score, never a calibrated forecast or probability.",
+        "properties": {
+          "alert_threshold": {
+            "title": "Alert Threshold",
+            "type": "number"
+          },
+          "contributions": {
+            "items": {
+              "$ref": "#/components/schemas/Contribution"
+            },
+            "title": "Contributions",
+            "type": "array"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "is_alert": {
+            "default": false,
+            "title": "Is Alert",
+            "type": "boolean"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "maximum": 100.0,
+                "minimum": 0.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "status": {
+            "enum": [
+              "ready",
+              "insufficient_history",
+              "unavailable"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "alert_threshold",
+          "contributions",
+          "explanation"
+        ],
+        "title": "RiskAssessment",
+        "type": "object"
+      },
+      "SequenceResult": {
+        "additionalProperties": false,
+        "properties": {
+          "adjusted_p": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Adjusted P"
+          },
+          "baseline_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Baseline Rate"
+          },
+          "blocks": {
+            "title": "Blocks",
+            "type": "integer"
+          },
+          "conditional_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conditional Rate"
+          },
+          "control_events": {
+            "title": "Control Events",
+            "type": "integer"
+          },
+          "control_opportunities": {
+            "title": "Control Opportunities",
+            "type": "integer"
+          },
+          "coverage": {
+            "title": "Coverage",
+            "type": "number"
+          },
+          "effect": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effect"
+          },
+          "eligible_intervals": {
+            "title": "Eligible Intervals",
+            "type": "integer"
+          },
+          "expected_intervals": {
+            "title": "Expected Intervals",
+            "type": "integer"
+          },
+          "explanation": {
+            "title": "Explanation",
+            "type": "string"
+          },
+          "follower": {
+            "title": "Follower",
+            "type": "string"
+          },
+          "follower_episodes": {
+            "title": "Follower Episodes",
+            "type": "integer"
+          },
+          "following_events": {
+            "title": "Following Events",
+            "type": "integer"
+          },
+          "interval": {
+            "anyOf": [
+              {
+                "maxItems": 2,
+                "minItems": 2,
+                "prefixItems": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "number"
+                  }
+                ],
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interval"
+          },
+          "lag_intervals": {
+            "title": "Lag Intervals",
+            "type": "integer"
+          },
+          "leader": {
+            "title": "Leader",
+            "type": "string"
+          },
+          "leader_episodes": {
+            "title": "Leader Episodes",
+            "type": "integer"
+          },
+          "lift": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Lift"
+          },
+          "opportunities": {
+            "title": "Opportunities",
+            "type": "integer"
+          },
+          "p_value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "P Value"
+          },
+          "segment": {
+            "title": "Segment",
+            "type": "string"
+          },
+          "selected_on_training": {
+            "default": false,
+            "title": "Selected On Training",
+            "type": "boolean"
+          },
+          "simultaneous": {
+            "title": "Simultaneous",
+            "type": "integer"
+          },
+          "status": {
+            "enum": [
+              "insufficient_data",
+              "exploratory",
+              "held_out_association"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "leader",
+          "follower",
+          "segment",
+          "status",
+          "lag_intervals",
+          "eligible_intervals",
+          "expected_intervals",
+          "coverage",
+          "blocks",
+          "leader_episodes",
+          "follower_episodes",
+          "opportunities",
+          "following_events",
+          "control_opportunities",
+          "control_events",
+          "simultaneous",
+          "conditional_rate",
+          "baseline_rate",
+          "lift",
+          "effect",
+          "explanation"
+        ],
+        "title": "SequenceResult",
+        "type": "object"
+      },
+      "SourceProgress": {
+        "properties": {
+          "finalized_through": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Finalized Through"
+          },
+          "late_trades": {
+            "title": "Late Trades",
+            "type": "integer"
+          },
+          "max_event_time": {
+            "anyOf": [
+              {
+                "format": "date-time",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max Event Time"
+          },
+          "pending_trades": {
+            "title": "Pending Trades",
+            "type": "integer"
+          },
+          "symbol": {
+            "title": "Symbol",
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol",
+          "max_event_time",
+          "finalized_through",
+          "pending_trades",
+          "late_trades"
+        ],
+        "title": "SourceProgress",
+        "type": "object"
+      },
+      "SymbolsResponse": {
+        "properties": {
+          "exchange": {
+            "default": "binance",
+            "title": "Exchange",
+            "type": "string"
+          },
+          "symbols": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Symbols",
+            "type": "array"
+          }
+        },
+        "required": [
+          "symbols"
+        ],
+        "title": "SymbolsResponse",
+        "type": "object"
+      },
+      "Trade": {
+        "description": "An immutable exchange trade with UTC time and inferred taker direction.",
+        "properties": {
+          "aggressor_side": {
+            "description": "A resting buyer implies the incoming aggressor was the seller.",
+            "enum": [
+              "buy",
+              "sell"
+            ],
+            "readOnly": true,
+            "title": "Aggressor Side",
+            "type": "string"
+          },
+          "buyer_maker": {
+            "title": "Buyer Maker",
+            "type": "boolean"
+          },
+          "exchange": {
+            "const": "binance",
+            "default": "binance",
+            "title": "Exchange",
+            "type": "string"
+          },
+          "price": {
+            "title": "Price",
+            "type": "string"
+          },
+          "quantity": {
+            "title": "Quantity",
+            "type": "string"
+          },
+          "symbol": {
+            "pattern": "^[A-Z0-9]{2,30}$",
+            "title": "Symbol",
+            "type": "string"
+          },
+          "timestamp": {
+            "format": "date-time",
+            "title": "Timestamp",
+            "type": "string"
+          },
+          "trade_id": {
+            "maximum": 9.223372036854776e+18,
+            "minimum": 0.0,
+            "title": "Trade Id",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "symbol",
+          "trade_id",
+          "price",
+          "quantity",
+          "timestamp",
+          "buyer_maker",
+          "aggressor_side"
+        ],
+        "title": "Trade",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "MarketPulse",
+    "version": "0.1.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/analytics/candles": {
+      "get": {
+        "description": "Finalized windows newest first, including explicit compact missing-interval ranges.\n\nMonetary values are decimal strings. Null volume in missing intervals means\nunknown market activity. Results use the API's configured analytics profile.",
+        "operationId": "candles_api_analytics_candles_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "symbol",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[A-Za-z0-9]{2,30}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Symbol"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Candle"
+                  },
+                  "title": "Response Candles Api Analytics Candles Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Candles",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
+    "/api/analytics/latest": {
+      "get": {
+        "description": "Latest evaluation per configured symbol, with pending/late counts and warm-up state.\n\nEmpty history yields insufficient_history, not a normal score or anomaly alert.\nA symbol filter can inspect any persisted symbol. The limit caps returned symbols.",
+        "operationId": "latest_api_analytics_latest_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "symbol",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[A-Za-z0-9]{2,30}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Symbol"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/LatestAnalytics"
+                  },
+                  "title": "Response Latest Api Analytics Latest Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Latest",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
+    "/api/anomalies/recent": {
+      "get": {
+        "description": "Combined alerts only; stable identifiers make repeated reads/process runs idempotent.",
+        "operationId": "recent_api_anomalies_recent_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "symbol",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[A-Za-z0-9]{2,30}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Symbol"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/AnomalyEvent"
+                  },
+                  "title": "Response Recent Api Anomalies Recent Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Recent",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
+    "/api/anomalies/summary": {
+      "get": {
+        "description": "Counts and maximum severity within the bounded latest-alert sample, not all time.",
+        "operationId": "summary_api_anomalies_summary_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "symbol",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[A-Za-z0-9]{2,30}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Symbol"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnomalySummary"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Summary",
+        "tags": [
+          "analytics"
+        ]
+      }
+    },
+    "/api/cross-asset/breakdowns": {
+      "get": {
+        "description": "Stable heuristic relationship-change events; no probability interpretation.",
+        "operationId": "breakdowns_api_cross_asset_breakdowns_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "pair",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "BTCUSDT-ETHUSDT",
+                    "BTCUSDT-SOLUSDT",
+                    "ETHUSDT-SOLUSDT"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Pair"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/BreakdownEvent"
+                  },
+                  "title": "Response Breakdowns Api Cross Asset Breakdowns Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Breakdowns",
+        "tags": [
+          "cross-asset"
+        ]
+      }
+    },
+    "/api/cross-asset/correlations": {
+      "get": {
+        "description": "Newest-first completed rolling relationships; null coefficients retain readiness.",
+        "operationId": "correlations_api_cross_asset_correlations_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/CorrelationFrame"
+                  },
+                  "title": "Response Correlations Api Cross Asset Correlations Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Correlations",
+        "tags": [
+          "cross-asset"
+        ]
+      }
+    },
+    "/api/cross-asset/lead-lag": {
+      "get": {
+        "description": "A leads B by k: A(t) versus B(t+k); only already-finalized targets are used.",
+        "operationId": "lead_lag_api_cross_asset_lead_lag_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "leader",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "BTCUSDT",
+                    "ETHUSDT",
+                    "SOLUSDT"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Leader"
+            }
+          },
+          {
+            "in": "query",
+            "name": "follower",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "BTCUSDT",
+                    "ETHUSDT",
+                    "SOLUSDT"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Follower"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LeadLagResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Lead Lag",
+        "tags": [
+          "cross-asset"
+        ]
+      }
+    },
+    "/api/cross-asset/matrix": {
+      "get": {
+        "description": "Latest relationship matrix/network evidence; diagonals are never synthesized here.",
+        "operationId": "matrix_api_cross_asset_matrix_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RelationshipMatrix"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Matrix",
+        "tags": [
+          "cross-asset"
+        ]
+      }
+    },
+    "/api/cross-asset/regimes": {
+      "get": {
+        "description": "Newest-first rule-based descriptions with evidence timestamps and thresholds.",
+        "operationId": "regimes_api_cross_asset_regimes_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/RegimeFrame"
+                  },
+                  "title": "Response Regimes Api Cross Asset Regimes Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Regimes",
+        "tags": [
+          "cross-asset"
+        ]
+      }
+    },
+    "/api/cross-asset/regimes/latest": {
+      "get": {
+        "operationId": "latest_regime_api_cross_asset_regimes_latest_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/RegimeFrame"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "title": "Response Latest Regime Api Cross Asset Regimes Latest Get"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Latest Regime",
+        "tags": [
+          "cross-asset"
+        ]
+      }
+    },
+    "/api/cross-asset/status": {
+      "get": {
+        "description": "Durable progress and source coverage boundary; process heartbeat remains unknown.",
+        "operationId": "status_api_cross_asset_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CrossProcessingStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Status",
+        "tags": [
+          "cross-asset"
+        ]
+      }
+    },
+    "/api/market/symbols": {
+      "get": {
+        "description": "Return configured subscriptions, not a claim about active connectivity.",
+        "operationId": "symbols_api_market_symbols_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SymbolsResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Symbols"
+      }
+    },
+    "/api/research/v1/discoveries/{discovery_id}": {
+      "get": {
+        "operationId": "discovery_api_research_v1_discoveries__discovery_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "discovery_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Discovery Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Discovery"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Discovery",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/discoveries/{discovery_id}/evidence": {
+      "get": {
+        "operationId": "evidence_api_research_v1_discoveries__discovery_id__evidence_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "discovery_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Discovery Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Evidence"
+                  },
+                  "title": "Response Evidence Api Research V1 Discoveries  Discovery Id  Evidence Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Evidence",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/experiments": {
+      "get": {
+        "operationId": "experiments_api_research_v1_experiments_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Experiment"
+                  },
+                  "title": "Response Experiments Api Research V1 Experiments Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Experiments",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/experiments/{experiment_id}": {
+      "get": {
+        "operationId": "experiment_api_research_v1_experiments__experiment_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "experiment_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Experiment Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Experiment"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Experiment",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/experiments/{experiment_id}/change-points": {
+      "get": {
+        "operationId": "changes_api_research_v1_experiments__experiment_id__change_points_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "experiment_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Experiment Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/ChangePoint"
+                  },
+                  "title": "Response Changes Api Research V1 Experiments  Experiment Id  Change Points Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Changes",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/experiments/{experiment_id}/discoveries": {
+      "get": {
+        "operationId": "discoveries_api_research_v1_experiments__experiment_id__discoveries_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "experiment_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Experiment Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Discovery"
+                  },
+                  "title": "Response Discoveries Api Research V1 Experiments  Experiment Id  Discoveries Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Discoveries",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/experiments/{experiment_id}/metrics": {
+      "get": {
+        "operationId": "metrics_api_research_v1_experiments__experiment_id__metrics_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "experiment_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Experiment Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Metric"
+                  },
+                  "title": "Response Metrics Api Research V1 Experiments  Experiment Id  Metrics Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Metrics",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/experiments/{experiment_id}/sequences": {
+      "get": {
+        "operationId": "sequences_api_research_v1_experiments__experiment_id__sequences_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "experiment_id",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-f0-9]{64}$",
+              "title": "Experiment Id",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 200,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "offset",
+            "required": false,
+            "schema": {
+              "default": 0,
+              "maximum": 100000,
+              "minimum": 0,
+              "title": "Offset",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/SequenceResult"
+                  },
+                  "title": "Response Sequences Api Research V1 Experiments  Experiment Id  Sequences Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Sequences",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/research/v1/status": {
+      "get": {
+        "operationId": "status_api_research_v1_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResearchStatus"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Status",
+        "tags": [
+          "research"
+        ]
+      }
+    },
+    "/api/trades/recent": {
+      "get": {
+        "description": "Return committed trades newest first; decimals serialize as strings.",
+        "operationId": "recent_trades_api_trades_recent_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "maximum": 1000,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          },
+          {
+            "in": "query",
+            "name": "symbol",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "pattern": "^[A-Za-z0-9]{2,30}$",
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Symbol"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/Trade"
+                  },
+                  "title": "Response Recent Trades Api Trades Recent Get",
+                  "type": "array"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Recent Trades"
+      }
+    },
+    "/health": {
+      "get": {
+        "description": "Check API database access; this does not assert exchange connectivity.",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    }
+  }
+}

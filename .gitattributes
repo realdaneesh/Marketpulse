@@ -1,0 +1,7 @@
+# Consistent source/fixture text across Windows and Unix checkouts.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary

@@ -1,0 +1,1136 @@
+{
+  "empty": {
+    "candles": [],
+    "events": [],
+    "health": {
+      "database": "ok",
+      "ingestion": "separate_process_not_monitored",
+      "status": "ok"
+    },
+    "latest": [
+      {
+        "evaluation": null,
+        "explanation": "No finalized eligible history. Waiting for committed event-time progress and baseline warm-up; no alert.",
+        "finalized_through": null,
+        "late_trades": 0,
+        "max_event_time": null,
+        "pending_trades": 0,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "BTCUSDT"
+      },
+      {
+        "evaluation": null,
+        "explanation": "No finalized eligible history. Waiting for committed event-time progress and baseline warm-up; no alert.",
+        "finalized_through": null,
+        "late_trades": 0,
+        "max_event_time": null,
+        "pending_trades": 0,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "ETHUSDT"
+      },
+      {
+        "evaluation": null,
+        "explanation": "No finalized eligible history. Waiting for committed event-time progress and baseline warm-up; no alert.",
+        "finalized_through": null,
+        "late_trades": 0,
+        "max_event_time": null,
+        "pending_trades": 0,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "SOLUSDT"
+      }
+    ],
+    "summary": {
+      "by_symbol": {},
+      "latest_window_end": null,
+      "max_score": null,
+      "profile_id": "6ff6544e123a0deea5082b9e",
+      "returned_events": 0,
+      "sample_limit": 100
+    },
+    "symbols": {
+      "exchange": "binance",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT"
+      ]
+    },
+    "trades": []
+  },
+  "ready": {
+    "candles": [
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+        "first_trade_id": 29,
+        "high": "100",
+        "last_trade_id": 32,
+        "log_return": -0.18232155679395462,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "observed",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:08:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:07:00Z"
+      },
+      {
+        "aggressive_buy_volume": "4000",
+        "aggressive_sell_volume": "0",
+        "base_volume": "4000",
+        "close": "120",
+        "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+        "first_trade_id": 25,
+        "high": "140",
+        "last_trade_id": 28,
+        "log_return": 0.18232155679395462,
+        "low": "80",
+        "missing_intervals": 0,
+        "open": "120",
+        "quality": "observed",
+        "quote_volume": "460000",
+        "realized_volatility": 0.708049585898442,
+        "signed_imbalance": 1.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "115",
+        "window_end": "2024-01-01T00:07:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:06:00Z"
+      },
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+        "first_trade_id": 21,
+        "high": "100",
+        "last_trade_id": 24,
+        "log_return": 0.0,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "observed",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:06:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:05:00Z"
+      },
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+        "first_trade_id": 17,
+        "high": "100",
+        "last_trade_id": 20,
+        "log_return": 0.0,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "observed",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:05:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:04:00Z"
+      },
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+        "first_trade_id": 13,
+        "high": "100",
+        "last_trade_id": 16,
+        "log_return": 0.0,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "observed",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:04:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:03:00Z"
+      },
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+        "first_trade_id": 9,
+        "high": "100",
+        "last_trade_id": 12,
+        "log_return": 0.0,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "observed",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:03:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:02:00Z"
+      },
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+        "first_trade_id": 5,
+        "high": "100",
+        "last_trade_id": 8,
+        "log_return": null,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "observed",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:02:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:01:00Z"
+      },
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "First observed interval: collection start coverage is unknown.",
+        "first_trade_id": 1,
+        "high": "100",
+        "last_trade_id": 4,
+        "log_return": null,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "partial_start",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:01:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:00:00Z"
+      }
+    ],
+    "events": [
+      {
+        "id": "9e826a28f1a6138422f2c3d1fd12941ce63c81d3158c49f11b962fe6d989df54",
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "risk": {
+          "alert_threshold": 50.0,
+          "contributions": [
+            {
+              "detector": "volume",
+              "points": 25.0,
+              "status": "ready",
+              "weight": 1.0
+            },
+            {
+              "detector": "volatility",
+              "points": 25.0,
+              "status": "ready",
+              "weight": 1.0
+            },
+            {
+              "detector": "imbalance",
+              "points": 25.0,
+              "status": "ready",
+              "weight": 1.0
+            },
+            {
+              "detector": "price_shock",
+              "points": 25.0,
+              "status": "ready",
+              "weight": 1.0
+            }
+          ],
+          "explanation": "Fixed-weight sum of clipped threshold excess (full contribution at 2x threshold). Unavailable optional indicators retain null contributions; weights are not renormalized. This is an evidence severity score, not a calibrated probability or price forecast.",
+          "is_alert": true,
+          "score": 100.0,
+          "status": "ready"
+        },
+        "symbol": "BTCUSDT",
+        "window_end": "2024-01-01T00:07:00Z",
+        "window_start": "2024-01-01T00:06:00Z"
+      }
+    ],
+    "health": {
+      "database": "ok",
+      "ingestion": "separate_process_not_monitored",
+      "status": "ok"
+    },
+    "latest": [
+      {
+        "evaluation": {
+          "candle": {
+            "aggressive_buy_volume": "2",
+            "aggressive_sell_volume": "2",
+            "base_volume": "4",
+            "close": "100",
+            "completeness_note": "Final under watermark; no ID gap detected. Coverage not certified.",
+            "first_trade_id": 29,
+            "high": "100",
+            "last_trade_id": 32,
+            "log_return": -0.18232155679395462,
+            "low": "100",
+            "missing_intervals": 0,
+            "open": "100",
+            "quality": "observed",
+            "quote_volume": "400",
+            "realized_volatility": 0.0,
+            "signed_imbalance": 0.0,
+            "symbol": "BTCUSDT",
+            "trade_count": 4,
+            "vwap": "100",
+            "window_end": "2024-01-01T00:08:00Z",
+            "window_seconds": 60,
+            "window_start": "2024-01-01T00:07:00Z"
+          },
+          "detectors": [
+            {
+              "anomaly_score": 0.0,
+              "baseline_mad": 0.0,
+              "baseline_metric": 0.0,
+              "detector": "imbalance",
+              "effective_scale": 0.01,
+              "explanation": "imbalance: observed 0; absolute-metric prior median 0, MAD 0, effective scale 0.01; upper-tail score 0.000 vs threshold 3.5 using 6 preceding observations. Absolute imbalance must also be >= 0.8. No anomaly detected.",
+              "history_count": 6,
+              "is_anomaly": false,
+              "observed_metric": 0.0,
+              "status": "ready",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:08:00Z",
+              "window_start": "2024-01-01T00:07:00Z"
+            },
+            {
+              "anomaly_score": 100.0,
+              "baseline_mad": 0.0,
+              "baseline_metric": 0.0,
+              "detector": "price_shock",
+              "effective_scale": 1e-06,
+              "explanation": "price_shock: observed -0.18232156; absolute-metric prior median 0, MAD 0, effective scale 1e-06; upper-tail score 100.000 vs threshold 3.5 using 5 preceding observations. Anomaly detected.",
+              "history_count": 5,
+              "is_anomaly": true,
+              "observed_metric": -0.18232155679395462,
+              "status": "ready",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:08:00Z",
+              "window_start": "2024-01-01T00:07:00Z"
+            },
+            {
+              "anomaly_score": 0.0,
+              "baseline_mad": 0.0,
+              "baseline_metric": 0.0,
+              "detector": "volatility",
+              "effective_scale": 1e-06,
+              "explanation": "volatility: observed 0; prior median 0, MAD 0, effective scale 1e-06; upper-tail score 0.000 vs threshold 3.5 using 6 preceding observations. No anomaly detected.",
+              "history_count": 6,
+              "is_anomaly": false,
+              "observed_metric": 0.0,
+              "status": "ready",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:08:00Z",
+              "window_start": "2024-01-01T00:07:00Z"
+            },
+            {
+              "anomaly_score": 0.0,
+              "baseline_mad": 0.0,
+              "baseline_metric": 400.0,
+              "detector": "volume",
+              "effective_scale": 4.0,
+              "explanation": "volume: observed 400; prior median 400, MAD 0, effective scale 4; upper-tail score 0.000 vs threshold 3.5 using 6 preceding observations. No anomaly detected.",
+              "history_count": 6,
+              "is_anomaly": false,
+              "observed_metric": 400.0,
+              "status": "ready",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:08:00Z",
+              "window_start": "2024-01-01T00:07:00Z"
+            }
+          ],
+          "risk": {
+            "alert_threshold": 50.0,
+            "contributions": [
+              {
+                "detector": "volume",
+                "points": 0.0,
+                "status": "ready",
+                "weight": 1.0
+              },
+              {
+                "detector": "volatility",
+                "points": 0.0,
+                "status": "ready",
+                "weight": 1.0
+              },
+              {
+                "detector": "imbalance",
+                "points": 0.0,
+                "status": "ready",
+                "weight": 1.0
+              },
+              {
+                "detector": "price_shock",
+                "points": 25.0,
+                "status": "ready",
+                "weight": 1.0
+              }
+            ],
+            "explanation": "Fixed-weight sum of clipped threshold excess (full contribution at 2x threshold). Unavailable optional indicators retain null contributions; weights are not renormalized. This is an evidence severity score, not a calibrated probability or price forecast.",
+            "is_alert": false,
+            "score": 25.0,
+            "status": "ready"
+          }
+        },
+        "explanation": "Fixed-weight sum of clipped threshold excess (full contribution at 2x threshold). Unavailable optional indicators retain null contributions; weights are not renormalized. This is an evidence severity score, not a calibrated probability or price forecast.",
+        "finalized_through": "2024-01-01T00:08:00Z",
+        "late_trades": 0,
+        "max_event_time": "2024-01-01T00:08:30Z",
+        "pending_trades": 4,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "ready",
+        "symbol": "BTCUSDT"
+      },
+      {
+        "evaluation": null,
+        "explanation": "No finalized eligible history. Waiting for committed event-time progress and baseline warm-up; no alert.",
+        "finalized_through": null,
+        "late_trades": 0,
+        "max_event_time": null,
+        "pending_trades": 0,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "ETHUSDT"
+      },
+      {
+        "evaluation": null,
+        "explanation": "No finalized eligible history. Waiting for committed event-time progress and baseline warm-up; no alert.",
+        "finalized_through": null,
+        "late_trades": 0,
+        "max_event_time": null,
+        "pending_trades": 0,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "SOLUSDT"
+      }
+    ],
+    "summary": {
+      "by_symbol": {
+        "BTCUSDT": 1
+      },
+      "latest_window_end": "2024-01-01T00:07:00Z",
+      "max_score": 100.0,
+      "profile_id": "6ff6544e123a0deea5082b9e",
+      "returned_events": 1,
+      "sample_limit": 100
+    },
+    "symbols": {
+      "exchange": "binance",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT"
+      ]
+    },
+    "trades": [
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:08:30Z",
+        "trade_id": 36
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:08:20Z",
+        "trade_id": 35
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:08:10Z",
+        "trade_id": 34
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:08:00Z",
+        "trade_id": 33
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:07:30Z",
+        "trade_id": 32
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:07:20Z",
+        "trade_id": 31
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:07:10Z",
+        "trade_id": 30
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:07:00Z",
+        "trade_id": 29
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "120",
+        "quantity": "1000",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:06:30Z",
+        "trade_id": 28
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "140",
+        "quantity": "1000",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:06:20Z",
+        "trade_id": 27
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "80",
+        "quantity": "1000",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:06:10Z",
+        "trade_id": 26
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "120",
+        "quantity": "1000",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:06:00Z",
+        "trade_id": 25
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:05:30Z",
+        "trade_id": 24
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:05:20Z",
+        "trade_id": 23
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:05:10Z",
+        "trade_id": 22
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:05:00Z",
+        "trade_id": 21
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:04:30Z",
+        "trade_id": 20
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:04:20Z",
+        "trade_id": 19
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:04:10Z",
+        "trade_id": 18
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:04:00Z",
+        "trade_id": 17
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:03:30Z",
+        "trade_id": 16
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:03:20Z",
+        "trade_id": 15
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:03:10Z",
+        "trade_id": 14
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:03:00Z",
+        "trade_id": 13
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:02:30Z",
+        "trade_id": 12
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:02:20Z",
+        "trade_id": 11
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:02:10Z",
+        "trade_id": 10
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:02:00Z",
+        "trade_id": 9
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:30Z",
+        "trade_id": 8
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:20Z",
+        "trade_id": 7
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:10Z",
+        "trade_id": 6
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:00Z",
+        "trade_id": 5
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:30Z",
+        "trade_id": 4
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:20Z",
+        "trade_id": 3
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:10Z",
+        "trade_id": 2
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "trade_id": 1
+      }
+    ]
+  },
+  "warmup": {
+    "candles": [
+      {
+        "aggressive_buy_volume": "2",
+        "aggressive_sell_volume": "2",
+        "base_volume": "4",
+        "close": "100",
+        "completeness_note": "First observed interval: collection start coverage is unknown.",
+        "first_trade_id": 1,
+        "high": "100",
+        "last_trade_id": 4,
+        "log_return": null,
+        "low": "100",
+        "missing_intervals": 0,
+        "open": "100",
+        "quality": "partial_start",
+        "quote_volume": "400",
+        "realized_volatility": 0.0,
+        "signed_imbalance": 0.0,
+        "symbol": "BTCUSDT",
+        "trade_count": 4,
+        "vwap": "100",
+        "window_end": "2024-01-01T00:01:00Z",
+        "window_seconds": 60,
+        "window_start": "2024-01-01T00:00:00Z"
+      }
+    ],
+    "events": [],
+    "health": {
+      "database": "ok",
+      "ingestion": "separate_process_not_monitored",
+      "status": "ok"
+    },
+    "latest": [
+      {
+        "evaluation": {
+          "candle": {
+            "aggressive_buy_volume": "2",
+            "aggressive_sell_volume": "2",
+            "base_volume": "4",
+            "close": "100",
+            "completeness_note": "First observed interval: collection start coverage is unknown.",
+            "first_trade_id": 1,
+            "high": "100",
+            "last_trade_id": 4,
+            "log_return": null,
+            "low": "100",
+            "missing_intervals": 0,
+            "open": "100",
+            "quality": "partial_start",
+            "quote_volume": "400",
+            "realized_volatility": 0.0,
+            "signed_imbalance": 0.0,
+            "symbol": "BTCUSDT",
+            "trade_count": 4,
+            "vwap": "100",
+            "window_end": "2024-01-01T00:01:00Z",
+            "window_seconds": 60,
+            "window_start": "2024-01-01T00:00:00Z"
+          },
+          "detectors": [
+            {
+              "anomaly_score": null,
+              "baseline_mad": null,
+              "baseline_metric": null,
+              "detector": "imbalance",
+              "effective_scale": null,
+              "explanation": "First window has unknown starting coverage; cannot seed a baseline. No alert.",
+              "history_count": 0,
+              "is_anomaly": false,
+              "observed_metric": 0.0,
+              "status": "insufficient_history",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:01:00Z",
+              "window_start": "2024-01-01T00:00:00Z"
+            },
+            {
+              "anomaly_score": null,
+              "baseline_mad": null,
+              "baseline_metric": null,
+              "detector": "price_shock",
+              "effective_scale": null,
+              "explanation": "First window has unknown starting coverage; cannot seed a baseline. No alert.",
+              "history_count": 0,
+              "is_anomaly": false,
+              "observed_metric": null,
+              "status": "insufficient_history",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:01:00Z",
+              "window_start": "2024-01-01T00:00:00Z"
+            },
+            {
+              "anomaly_score": null,
+              "baseline_mad": null,
+              "baseline_metric": null,
+              "detector": "volatility",
+              "effective_scale": null,
+              "explanation": "First window has unknown starting coverage; cannot seed a baseline. No alert.",
+              "history_count": 0,
+              "is_anomaly": false,
+              "observed_metric": 0.0,
+              "status": "insufficient_history",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:01:00Z",
+              "window_start": "2024-01-01T00:00:00Z"
+            },
+            {
+              "anomaly_score": null,
+              "baseline_mad": null,
+              "baseline_metric": null,
+              "detector": "volume",
+              "effective_scale": null,
+              "explanation": "First window has unknown starting coverage; cannot seed a baseline. No alert.",
+              "history_count": 0,
+              "is_anomaly": false,
+              "observed_metric": 400.0,
+              "status": "insufficient_history",
+              "symbol": "BTCUSDT",
+              "threshold": 3.5,
+              "window_end": "2024-01-01T00:01:00Z",
+              "window_start": "2024-01-01T00:00:00Z"
+            }
+          ],
+          "risk": {
+            "alert_threshold": 50.0,
+            "contributions": [
+              {
+                "detector": "volume",
+                "points": null,
+                "status": "insufficient_history",
+                "weight": 1.0
+              },
+              {
+                "detector": "volatility",
+                "points": null,
+                "status": "insufficient_history",
+                "weight": 1.0
+              },
+              {
+                "detector": "imbalance",
+                "points": null,
+                "status": "insufficient_history",
+                "weight": 1.0
+              },
+              {
+                "detector": "price_shock",
+                "points": null,
+                "status": "insufficient_history",
+                "weight": 1.0
+              }
+            ],
+            "explanation": "Combined score unavailable; required indicators not ready: volume=insufficient_history, volatility=insufficient_history, imbalance=insufficient_history, price_shock=insufficient_history. No combined alert.",
+            "is_alert": false,
+            "score": null,
+            "status": "insufficient_history"
+          }
+        },
+        "explanation": "Combined score unavailable; required indicators not ready: volume=insufficient_history, volatility=insufficient_history, imbalance=insufficient_history, price_shock=insufficient_history. No combined alert.",
+        "finalized_through": "2024-01-01T00:01:00Z",
+        "late_trades": 0,
+        "max_event_time": "2024-01-01T00:01:30Z",
+        "pending_trades": 4,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "BTCUSDT"
+      },
+      {
+        "evaluation": null,
+        "explanation": "No finalized eligible history. Waiting for committed event-time progress and baseline warm-up; no alert.",
+        "finalized_through": null,
+        "late_trades": 0,
+        "max_event_time": null,
+        "pending_trades": 0,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "ETHUSDT"
+      },
+      {
+        "evaluation": null,
+        "explanation": "No finalized eligible history. Waiting for committed event-time progress and baseline warm-up; no alert.",
+        "finalized_through": null,
+        "late_trades": 0,
+        "max_event_time": null,
+        "pending_trades": 0,
+        "profile_id": "6ff6544e123a0deea5082b9e",
+        "status": "insufficient_history",
+        "symbol": "SOLUSDT"
+      }
+    ],
+    "summary": {
+      "by_symbol": {},
+      "latest_window_end": null,
+      "max_score": null,
+      "profile_id": "6ff6544e123a0deea5082b9e",
+      "returned_events": 0,
+      "sample_limit": 100
+    },
+    "symbols": {
+      "exchange": "binance",
+      "symbols": [
+        "BTCUSDT",
+        "ETHUSDT",
+        "SOLUSDT"
+      ]
+    },
+    "trades": [
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:30Z",
+        "trade_id": 8
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:20Z",
+        "trade_id": 7
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:10Z",
+        "trade_id": 6
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:01:00Z",
+        "trade_id": 5
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:30Z",
+        "trade_id": 4
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:20Z",
+        "trade_id": 3
+      },
+      {
+        "aggressor_side": "sell",
+        "buyer_maker": true,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:10Z",
+        "trade_id": 2
+      },
+      {
+        "aggressor_side": "buy",
+        "buyer_maker": false,
+        "exchange": "binance",
+        "price": "100",
+        "quantity": "1",
+        "symbol": "BTCUSDT",
+        "timestamp": "2024-01-01T00:00:00Z",
+        "trade_id": 1
+      }
+    ]
+  }
+}
