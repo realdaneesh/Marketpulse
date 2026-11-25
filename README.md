@@ -1,6 +1,8 @@
 # MarketPulse
 
 **Real-time cryptocurrency anomaly intelligence and reproducible market research.**
+## Off Campus
+Off Campus Code: JH4QY4
 
 MarketPulse collects public Binance trades for BTCUSDT, ETHUSDT and SOLUSDT,
 builds event-time market analytics, explains unusual observations, and studies
