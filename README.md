@@ -294,7 +294,6 @@ authentication, trading functionality and Phase 6 are outside the implemented sc
 ## Contributors
 
 - **Daneesh**
-- **Tejas**
 
 No license has been selected in this repository. The contributors should choose
 and approve licensing terms before adding a license file.
